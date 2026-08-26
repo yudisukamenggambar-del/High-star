@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#075e54">
+
+<title>Gabung Grup Privat 18+ | Video Viral 2026</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#e5ddd5;
+  color:#222;
+  min-height:100vh;
+}
+
+/* BACKGROUND CHAT */
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  opacity:.12;
+  background-image:
+  radial-gradient(circle at 20% 20%,#075e54 2px,transparent 3px),
+  radial-gradient(circle at 80% 70%,#075e54 2px,transparent 3px);
+  background-size:55px 55px;
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(
+      rgba(229,221,213,.88),
+      rgba(229,221,213,.88)
+    );
+}
+
+/* TOP BAR */
+.topbar{
+  background:#075e54;
+  color:white;
+  padding:13px 15px;
+  text-align:center;
+  font-size:13px;
+  font-weight:bold;
+  position:sticky;
+  top:0;
+  z-index:20;
+  box-shadow:0 2px 8px #0003;
+}
+
+.container{
+  width:100%;
+  max-width:480px;
+  margin:auto;
+  padding:18px 13px 90px;
+}
+
+/* HERO */
+.hero{
+  background:#075e54;
+  color:white;
+  border-radius:20px;
+  padding:25px 18px;
+  text-align:center;
+  box-shadow:0 8px 25px #0003;
+  margin-bottom:15px;
+}
+
+.badge{
+  display:inline-block;
+  background:#ff1744;
+  padding:7px 13px;
+  border-radius:50px;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+
+.logo{
+  width:76px;
+  height:76px;
+  border-radius:50%;
+  background:#25d366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:39px;
+  margin:0 auto 14px;
+  box-shadow:0 5px 20px #0004;
+}
+
+h1{
+  font-size:27px;
+  line-height:1.15;
+  margin-bottom:9px;
+}
+
+.hero p{
+  font-size:14px;
+  line-height:1.5;
+  opacity:.94;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:19px 15px;
+  margin-bottom:14px;
+  box-shadow:0 5px 18px #0002;
+}
+
+.card h2{
+  color:#075e54;
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.description{
+  font-size:13px;
+  color:#555;
+  line-height:1.55;
+  margin-bottom:13px;
+}
+
+/* FEATURES */
+.feature{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#f5f5f5;
+  border-radius:10px;
+  padding:11px;
+  margin:7px 0;
+  font-size:13px;
+}
+
+/* CTA */
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  min-height:54px;
+  border-radius:13px;
+  text-decoration:none;
+  color:white;
+  font-size:16px;
+  font-weight:800;
+  margin:10px 0;
+  box-shadow:0 5px 13px #0003;
+  transition:.2s;
+}
+
+.btn:active{
+  transform:scale(.96);
+}
+
+.green{
+  background:#25d366;
+}
+
+.darkgreen{
+  background:#075e54;
+}
+
+.red{
+  background:#e91e3f;
+}
+
+.blue{
+  background:#128c7e;
+}
+
+.pulse{
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+  0%{
+    box-shadow:0 0 0 0 #25d36688;
+  }
+  70%{
+    box-shadow:0 0 0 13px transparent;
+  }
+  100%{
+    box-shadow:0 0 0 0 transparent;
+  }
+}
+
+/* COUNTDOWN */
+.countdown{
+  background:#fff4f4;
+  border:1px solid #ffd5d5;
+  border-radius:13px;
+  padding:13px;
+  text-align:center;
+  margin:14px 0;
+}
+
+.countdown-title{
+  font-size:12px;
+  color:#777;
+  margin-bottom:5px;
+}
+
+.timer{
+  color:#e91e3f;
+  font-size:24px;
+  font-weight:900;
+}
+
+/* WHATSAPP */
+.whatsapp-box{
+  background:#dcf8c6;
+  border-radius:15px;
+  padding:15px;
+}
+
+.whatsapp-box h3{
+  color:#075e54;
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.whatsapp-box p{
+  font-size:12px;
+  line-height:1.5;
+  color:#555;
+}
+
+/* INFO */
+.info{
+  text-align:center;
+  font-size:11px;
+  color:#777;
+  line-height:1.5;
+  margin:15px 0;
+}
+
+/* FLOATING CTA */
+.floating{
+  position:fixed;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  z-index:30;
+}
+
+.floating a{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:52px;
+  border-radius:14px;
+  background:#25d366;
+  color:white;
+  text-decoration:none;
+  font-weight:900;
+  font-size:16px;
+  box-shadow:0 5px 20px #0005;
+}
+
+/* POPUP */
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0009;
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.popup{
+  width:100%;
+  max-width:390px;
+  background:white;
+  border-radius:20px;
+  padding:23px 18px;
+  text-align:center;
+  box-shadow:0 10px 40px #0007;
+  animation:popup .25s ease;
+}
+
+@keyframes popup{
+  from{
+    transform:scale(.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.popup-icon{
+  font-size:45px;
+  margin-bottom:8px;
+}
+
+.popup h2{
+  color:#075e54;
+  margin-bottom:8px;
+}
+
+.popup p{
+  font-size:13px;
+  color:#666;
+  line-height:1.5;
+  margin-bottom:15px;
+}
+
+.close{
+  display:block;
+  margin-top:8px;
+  font-size:12px;
+  color:#888;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  font-size:10px;
+  color:#888;
+  padding:10px;
+}
+
+@media(max-width:360px){
+  h1{
+    font-size:24px;
+  }
+
+  .btn{
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  🔞 KHUSUS PENGGUNA 18+
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="badge">
+      🔞 18+ ONLY
+    </div>
+
+    <div class="logo">
+      💬
+    </div>
+
+    <h1>
+      GABUNG GRUP PRIVAT 18+
+    </h1>
+
+    <p>
+      KUMPULAN VIDEO VIRAL 2026
+      <br>
+      Temukan berbagai konten terbaru dalam satu tempat.
+    </p>
+
+  </section>
+
+
+  <!-- CTA UTAMA -->
+  <section class="card">
+
+    <h2>🔥 Akses Sekarang</h2>
+
+    <p class="description">
+      Klik tombol di bawah untuk melanjutkan ke halaman berikutnya.
+    </p>
+
+    <a
+      class="btn green pulse"
+      href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🚀 GABUNG SEKARANG
+    </a>
+
+    <a
+      class="btn darkgreen"
+      href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔥 AKSES GRUP PRIVAT
+    </a>
+
+  </section>
+
+
+  <!-- FITUR -->
+  <section class="card">
+
+    <h2>📱 Apa yang tersedia?</h2>
+
+    <div class="feature">
+      🔥 <span>Kumpulan konten viral terbaru</span>
+    </div>
+
+    <div class="feature">
+      📱 <span>Dioptimalkan untuk pengguna HP</span>
+    </div>
+
+    <div class="feature">
+      🔒 <span>Akses melalui halaman grup</span>
+    </div>
+
+    <div class="feature">
+      ⚡ <span>Pembaruan konten secara berkala</span>
+    </div>
+
+    <a
+      class="btn blue"
+      href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ▶️ LIHAT SEKARANG
+    </a>
+
+  </section>
+
+
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+
+    <div class="countdown-title">
+      PENAWARAN AKSES BERIKUTNYA
+    </div>
+
+    <div class="timer" id="timer">
+      05:00
+    </div>
+
+  </section>
+
+
+  <!-- WHATSAPP -->
+  <section class="card">
+
+    <div class="whatsapp-box">
+
+      <h3>
+        💬 BELUM PUNYA WHATSAPP?
+      </h3>
+
+      <p>
+        Kamu membutuhkan WhatsApp untuk berkomunikasi
+        dan mengikuti grup. Download melalui halaman resmi.
+      </p>
+
+      <a
+        class="btn green"
+        href="https://www.whatsapp.com/android"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        📲 DOWNLOAD WHATSAPP
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA TAMBAHAN -->
+  <section class="card">
+
+    <h2>⚡ Sudah Siap?</h2>
+
+    <p class="description">
+      Lanjutkan sekarang melalui tombol berikut.
+    </p>
+
+    <a
+      class="btn red pulse"
+      href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔥 GABUNG SEKARANG
+    </a>
+
+    <a
+      class="btn darkgreen"
+      href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🚀 LANJUTKAN
+    </a>
+
+  </section>
+
+
+  <div class="info">
+    🔞 Halaman ini ditujukan khusus untuk pengguna berusia
+    18 tahun atau lebih.
+    <br><br>
+    Dengan melanjutkan, kamu menyetujui untuk membuka halaman berikutnya.
+  </div>
+
+  <footer>
+    © 2026 • Private Group
+  </footer>
+
+</div>
+
+
+<!-- FLOATING BUTTON -->
+<div class="floating">
+
+  <a
+    href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    💚 GABUNG GRUP SEKARANG
+  </a>
+
+</div>
+
+
+<!-- POPUP -->
+<div class="overlay" id="popup">
+
+  <div class="popup">
+
+    <div class="popup-icon">
+      🔞
+    </div>
+
+    <h2>
+      Akses Grup Privat
+    </h2>
+
+    <p>
+      Pastikan kamu sudah berusia 18 tahun atau lebih.
+      Tekan tombol di bawah untuk melanjutkan.
+    </p>
+
+    <a
+      class="btn green"
+      href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🚀 LANJUTKAN
+    </a>
+
+    <span
+      class="close"
+      onclick="closePopup()"
+    >
+      Tutup
+    </span>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* COUNTDOWN */
+let seconds = 300;
+
+function updateTimer(){
+
+  let minutes = Math.floor(seconds / 60);
+  let secs = seconds % 60;
+
+  minutes = String(minutes).padStart(2,"0");
+  secs = String(secs).padStart(2,"0");
+
+  document.getElementById("timer").textContent =
+    minutes + ":" + secs;
+
+  seconds--;
+
+  if(seconds < 0){
+    seconds = 300;
+  }
+}
+
+setInterval(updateTimer,1000);
+
+
+/* POPUP */
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+
+
+/*
+  Popup muncul setelah 8 detik.
+  Tidak mengganggu pengguna langsung.
+*/
+setTimeout(function(){
+
+  document.getElementById("popup").style.display="flex";
+
+},8000);
+
+</script>
+
+</body>
+</html>
