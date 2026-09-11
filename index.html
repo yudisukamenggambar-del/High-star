@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Verification & Support Center</title>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #efeae2;
+            background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 420px;
+            height: 92vh;
+            max-height: 800px;
+            background: #efeae2;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 1px solid #d1d7db;
+        }
+
+        /* WhatsApp Header Style */
+        .chat-header {
+            background-color: #00a884;
+            color: #ffffff;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 40px;
+            height: 40px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #00a884;
+            font-size: 18px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .online-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 10px;
+            height: 10px;
+            background-color: #25d366;
+            border: 2px solid #00a884;
+            border-radius: 50%;
+        }
+
+        .contact-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .contact-info p {
+            font-size: 12px;
+            opacity: 0.85;
+        }
+
+        .chat-header-right {
+            display: flex;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        .chat-header-right a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Chat Body */
+        .chat-body {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .date-divider {
+            text-align: center;
+            margin: 8px 0;
+        }
+
+        .date-divider span {
+            background-color: #e4e6eb;
+            color: #667781;
+            font-size: 11px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 0.5px rgba(0,0,0,0.05);
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 7.5px;
+            font-size: 14.5px;
+            line-height: 1.4;
+            position: relative;
+            box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+            word-wrap: break-word;
+        }
+
+        .message.incoming {
+            background-color: #ffffff;
+            color: #111b21;
+            align-self: flex-start;
+            border-top-left-radius: 0;
+        }
+
+        .message .time {
+            display: block;
+            font-size: 10px;
+            color: #667781;
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        /* Interactive Action Buttons Wrapper */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            color: #00a884;
+            border: 1px solid #d1d7db;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #f0f2f5;
+            border-color: #00a884;
+        }
+
+        .btn-action.primary {
+            background-color: #00a884;
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-action.primary:hover {
+            background-color: #017b62;
+        }
+
+        .btn-action i {
+            font-size: 16px;
+        }
+
+        /* Chat Footer / Input Mock */
+        .chat-footer {
+            background-color: #f0f2f5;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-top: 1px solid #d1d7db;
+        }
+
+        .input-mock {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #667781;
+            border: 1px solid #d1d7db;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .send-btn {
+            background-color: #00a884;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+        }
+
+        .send-btn:hover {
+            background-color: #017b62;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="online-badge"></div>
+                </div>
+                <div class="contact-info">
+                    <h3>Support Assistant</h3>
+                    <p>Online • Verified Secure</p>
+                </div>
+            </div>
+            <div class="chat-header-right">
+                <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"><i class="fa-solid fa-video"></i></a>
+                <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+
+        <!-- Chat Content Area -->
+        <div class="chat-body">
+            <div class="date-divider">
+                <span>Today</span>
+            </div>
+
+            <div class="message incoming">
+                Hello there! 👋 Welcome to the official verification & reward portal.
+                <span class="time">12:00 PM</span>
+            </div>
+
+            <div class="message incoming">
+                To access exclusive content, claim your bonuses, or proceed to the dashboard, please select one of the secure options below:
+                <span class="time">12:01 PM</span>
+            </div>
+
+            <!-- Action Buttons / Quick Replies Pointing to Adsterra -->
+            <div class="action-buttons">
+                <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8" class="btn-action primary">
+                    <span>💬 Start Secure Chat Session</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8" class="btn-action">
+                    <span>📞 Audio Line Verification</span>
+                    <i class="fa-solid fa-phone-volume"></i>
+                </a>
+
+                <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8" class="btn-action">
+                    <span>⭐ Claim VIP Access / Rewards</span>
+                    <i class="fa-solid fa-gift"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer Input Bar -->
+        <div class="chat-footer">
+            <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8" class="input-mock">
+                <span>Type a message...</span>
+                <i class="fa-regular fa-face-smile" style="color: #667781;"></i>
+            </a>
+            <a href="https://www.profitableratecpmnetwork.com/hxqiwakqzz?key=c522d284b381440de7e2a787ddf43cb8" class="send-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+ 
